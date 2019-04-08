@@ -2,8 +2,9 @@
 
 char    *ft_strstr(const char *haystack, const char *needle)
 {
-    size_t i;
-    size_t j;
+    size_t  i;
+    size_t  j;
+    int     x;
     size_t needle_size;
 
     if ((needle_size = ft_strlen(needle)) == 0)
@@ -12,14 +13,20 @@ char    *ft_strstr(const char *haystack, const char *needle)
     while (haystack[i] != '\0')
     {
         j = 0;
-        while (haystack[i] == needle[j] && haystack[i] != '\0')
+        x = i;
+        while (haystack[x] == needle[j] && haystack[x] != '\0')
         {
-            i++;
+            x++;
             j++;
         }
         if (j == needle_size)
-            return ((char*)haystack + i - j);
+            return ((char*)haystack + x - j);
         i++;
     }
-    return (NULL);   
+    return (NULL);    
 }
+
+/* int     main()
+{
+    printf("%s", ft_strstr("MZIRIBMZIRIBMZP", "MZIRIBMZP"));
+} */

@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgrandpa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 15:55:46 by tgrandpa          #+#    #+#             */
-/*   Updated: 2019/04/03 15:55:47 by tgrandpa         ###   ########.fr       */
+/*   Created: 2019/04/08 18:14:44 by tgrandpa          #+#    #+#             */
+/*   Updated: 2019/04/08 18:14:46 by tgrandpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char		*ft_strdup(char *src)
+int     ft_tolower(int c)
 {
-	char	*dup;
-	int		i;
-	int		size;
-
-	i = 0;
-	size = 0;
-	while (src[i++] != '\0')
-		size++;
-	dup = (char*)malloc(sizeof(*dup) * size + 1);
-	i = 0;
-	if (dup)
-	{
-		while (i < size)
-		{
-			dup[i] = src[i];
-			i++;
-		}
-		dup[i] = '\0';
-		return (dup);
-	}
-	return (NULL);
+    if (c >= 'A' && c <= 'Z')
+        return ('a' + c - 'A');
+    return (c);
 }
+
+//not down still memccpy, memmove, memchr, memcmp, strlcat, strnstr, atoi;
