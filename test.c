@@ -13,8 +13,8 @@ void swap(void *a, void *b, size_t size) {
 
 int main()
 {
-    int x = 50;
-    int y = 9025;
-   // swap(&x, &y,sizeof(int));
-    //printf("x = %d, y = %d\n", x, y);
+    char src[] = "test basic du memccpy !";
+    char buff1[22];
+    char *r2 = memccpy(buff1, src, 'm', 18);
+    printf("%s", r2);
 }

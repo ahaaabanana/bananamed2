@@ -14,6 +14,29 @@
 
 void        *ft_memmove(void *dst, const void *src, size_t len)
 {
+    char *x1;
+
+    x1 = dst;
+    printf("%s", x1);
+    return (dst);
+}
+
+int         main()
+{
+    char dst[12];
+    char src[] = "armagedon-1";
+    memmove(dst, src, 11);
+    printf("%s\n", dst);
+    int x;
+    x = 9025;
+    //-----------
+    printf("----------\n");
+    ft_memmove(&x, "not good", 10);
+}
+
+/* OLD CODE
+void        *ft_memmove(void *dst, const void *src, size_t len)
+{
     size_t  i;
     size_t  l;
     size_t  x;
@@ -48,5 +71,5 @@ void        *ft_memmove(void *dst, const void *src, size_t len)
     }
     return (dst);
 }
-
+*/
 

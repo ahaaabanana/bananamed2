@@ -12,7 +12,8 @@ char        *ft_itoa(int n)
         size++;
     while (n /= 10)
         size++;
-    x = ft_strnew(size);
+    if (!(x = ft_strnew(size)))
+        return (NULL);
     if (nb < 0)
     {
         x[0] = '-';
@@ -31,5 +32,6 @@ char        *ft_itoa(int n)
 /* int         main()
 {
     char *s;
-    s = ft_itoa(0);
+    s = ft_itoa(-1234);
+    printf("%s\n", s);
 } */

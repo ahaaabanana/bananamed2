@@ -6,6 +6,8 @@ char    *ft_strsub(char const *s, unsigned int start, size_t len)
     size_t i;
     size_t strsize;
 
+    if (!s)
+        return (NULL);
     i = 0;
     strsize = ft_strlen(s);
     substr = (char*)malloc(sizeof(*substr) * len + 1);
@@ -16,9 +18,8 @@ char    *ft_strsub(char const *s, unsigned int start, size_t len)
             substr[i] = s[start + i];
             i++;
         }
-        substr[start + i] = '\0';
+        substr[i] = '\0';
     }
     return (substr);
 }
-
 // "wellgoodjob"

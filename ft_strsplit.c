@@ -13,7 +13,6 @@ size_t      arr_length(char const *s, char c)
         {
             while (s[i] != c && s[i] != '\0')
                 i++;
-            // printf("c = %c, i = %ld\n", s[i - 1], i);
             res++;
         }
         else
@@ -54,10 +53,13 @@ char        **ft_strsplit(char const *s, char c)
     size_t arr_len;
     size_t i;
 
+    if (!s)
+        return (NULL);
     i = 0;
     x = (char*)s;
     arr_len = arr_length(s, c);
-    arr = (char**)malloc(sizeof(*arr) * arr_len);
+    if (!(arr = (char**)malloc(sizeof(*arr) * arr_len)))
+        return (NULL);
     while (i < arr_len)
     {
         x = word_lenght(x, arr + i, c);

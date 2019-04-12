@@ -5,6 +5,8 @@ char    *ft_strmap(char const *s, char (*f)(char))
     char *str;
     size_t strsize;
 
+    if (!s || !f)
+        return (NULL);
     strsize = ft_strlen(s);
     str = (char*)malloc(sizeof(*str) * strsize + 1);
     if (str)
