@@ -13,8 +13,8 @@ void swap(void *a, void *b, size_t size) {
 
 int main()
 {
-    char src[] = "test basic du memccpy !";
-    char buff1[22];
-    char *r2 = memccpy(buff1, src, 'm', 18);
-    printf("%s", r2);
+    char src[] = "armagedon-1";
+    char dst[12];
+    memmove(src + 4, src + 1, 14);
+    printf("%s", src);
 }

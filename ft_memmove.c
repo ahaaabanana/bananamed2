@@ -14,25 +14,43 @@
 
 void        *ft_memmove(void *dst, const void *src, size_t len)
 {
-    char *x1;
+    size_t  i;
+    size_t  b;
+    char    *x1;
+    char    *x2;
 
-    x1 = dst;
-    printf("%s", x1);
+    i = 0;
+    b = dst - src;
+    x1 = (char*)dst;
+    x2 = (char*)src;
+    if (src < dst && len > b)
+    {
+        while (i < len - b)
+        {
+            x1[len - 1 - i] = x1[len - b - 1 - i];
+            i++;
+        }
+        len = b;
+        i = 0;
+    }
+    while (i < len)
+    {
+        x1[i] = x2[i];
+        i++;
+    }
     return (dst);
 }
 
-int         main()
+/* int         main()
 {
-    char dst[12];
     char src[] = "armagedon-1";
-    memmove(dst, src, 11);
-    printf("%s\n", dst);
-    int x;
-    x = 9025;
-    //-----------
-    printf("----------\n");
-    ft_memmove(&x, "not good", 10);
-}
+    char srz[] = "armagedon-1";
+    char dst[12];
+    // ft_memmove(src + 4, src + 1, 20);
+    memmove(srz + 4, srz + 1, 20);
+    // printf("ft=%s\n", src);
+    printf("lc=%s\n", srz);
+} */
 
 /* OLD CODE
 void        *ft_memmove(void *dst, const void *src, size_t len)
