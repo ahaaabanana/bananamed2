@@ -13,8 +13,18 @@ void swap(void *a, void *b, size_t size) {
 
 int main()
 {
-    char src[] = "armagedon-1";
-    char dst[12];
-    memmove(src + 4, src + 1, 14);
-    printf("%s", src);
+    int *x;
+    int n = 100;
+    x = (int*)malloc(sizeof(*x) * n);
+    for (int i = 0; i < n; i++)
+        x[i] = i * i;
+    for (int i = 0; i < n; i++)
+        printf("%d ", x[i]);
+    printf("\n\n");
+    // for (int i = 0; i < 3; i++)
+        free(x);
+    for (int i = 0; i < n; i++)
+        printf("%d ", x[i]);
+    printf("\n");
+    return (0);
 }
